@@ -13,6 +13,18 @@ def install_package(package):
         print(f"Installing {package}...") # printline to show the user what is being installed
         subprocess.check_call([sys.executable, "-m", "pip", "install", package]) # sends this command to the terminal to install with pip, will not work if user does not have pip
 
-install_package("ultralytics")
+install_package("mss")
+install_package("numpy")
+install_package("cv2")
+#install_package("ultralytics")
 
-import ultralytics
+import mss
+import numpy
+import cv2
+#import ultralytics
+#from ultralytics import YOLO
+
+with mss.mss() as sct:
+    screenshot = sct.grab(sct.monitors[1])
+
+    cv2.imwrite("screenshot.png", screenshot)
