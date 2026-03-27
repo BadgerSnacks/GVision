@@ -22,6 +22,7 @@ if __name__ == '__main__':
     install_package("cv2")
     #install_package("ultralytics")
     install_package("keyboard")
+    install_package("pyserial")
 
     #imports that need to be installed first
     import keyboard
@@ -36,13 +37,13 @@ if __name__ == '__main__':
     BLUE = "\033[34m"
     RESET = "\033[0m"
 
-    while running:
-        print("Enter X to exit.")
-        print("Enter 1 to start screenshots")
+    while running: #Main loop that runs the program
+        print("Enter X to exit.") #User prompts
+        print("Enter 1 to start screenshots") #User prompts
 
-        user_input = input()
+        user_input = input() #Variable collecting next user inputs
 
-        match user_input.lower().strip():
+        match user_input.lower().strip(): #Match
             case "x":
                 running = False
             case "1":
